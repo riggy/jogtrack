@@ -5,7 +5,19 @@
 #= require_tree ./routers
 
 window.Jogtrack =
+  App: new Backbone.Marionette.Application()
   Models: {}
   Collections: {}
-  Routers: {}
   Views: {}
+
+Jogtrack.App.addInitializer( ->
+  @router = new Jogtrack.Router()
+  @layout = new Jogtrack.Views.Layout()
+  @layout.render()
+)
+
+Jogtrack.App.on 'initialize:after', ->
+  Backbone.history.start()
+
+$ ->
+  Jogtrack.App.start()

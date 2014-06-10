@@ -21,6 +21,8 @@ gem 'rails-backbone'
 gem 'haml_coffee_assets'
 gem 'haml_assets'
 gem 'will_paginate'
+gem 'thin'
+gem 'quiet_assets'
 
 
 group :test do

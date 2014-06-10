@@ -17,5 +17,7 @@
 //= require backbone
 //= require backbone_rails_sync
 //= require backbone_datalink
+//= require backbone.marionette
+//= require hamlcoffee
 //= require backbone/jogtrack
 //= require_tree .
