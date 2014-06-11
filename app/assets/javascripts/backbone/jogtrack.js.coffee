@@ -4,7 +4,7 @@
 #= require_tree ./views
 #= require_tree ./routers
 
-window.Jogtrack =
+@Jogtrack =
   App: new Backbone.Marionette.Application()
   Models: {}
   Collections: {}
@@ -12,12 +12,16 @@ window.Jogtrack =
 
 Jogtrack.App.addInitializer( ->
   @router = new Jogtrack.Router()
+  @session = new Jogtrack.Models.Session()
+  @session.fetch(wait: true)
   @layout = new Jogtrack.Views.Layout()
   @layout.render()
 )
 
 Jogtrack.App.on 'initialize:after', ->
   Backbone.history.start()
+
+window.app = Jogtrack.App
 
 $ ->
   Jogtrack.App.start()

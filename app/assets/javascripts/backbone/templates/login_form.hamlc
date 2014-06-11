@@ -1,0 +1,10 @@
+%form
+  %label
+    Email
+    %input#user_session_email{name: 'email', type: 'text'}
+  %br
+  %label
+    Password
+    %input#user_session_password{name: 'password', type: 'password'}
+  %br
+  %input{type: 'submit', value: 'Login'}

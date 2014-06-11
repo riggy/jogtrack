@@ -12,11 +12,12 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0',          group: :doc
-gem 'spring',        group: :development
+gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'spring', group: :development
 
 gem 'haml-rails'
 gem 'authlogic'
+gem 'scrypt'
 gem 'rails-backbone'
 gem 'haml_coffee_assets'
 gem 'haml_assets'
@@ -34,4 +35,9 @@ group :development do
   gem 'guard'
   gem 'guard-minitest'
   gem 'guard-bundler'
+end
+
+group :development, :test do
+  gem 'factory_girl_rails'
+  gem 'faker'
 end
