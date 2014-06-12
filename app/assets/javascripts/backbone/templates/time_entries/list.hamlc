@@ -1,0 +1,8 @@
+%table.list
+  %thead
+    %th Date
+    %th Distance
+    %th Time
+    %th Average time
+  %tbody
+

@@ -9,4 +9,4 @@ class Jogtrack.Models.TimeEntry extends Backbone.Model
 class Jogtrack.Collections.TimeEntries extends Backbone.Collection
   model: Jogtrack.Models.TimeEntry
 
-  url: '/time_entries.json'
+  url: '/time_entries'

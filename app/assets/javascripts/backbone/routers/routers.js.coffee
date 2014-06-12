@@ -2,11 +2,16 @@ class Jogtrack.Router extends Backbone.Router
 
   routes:
     "" : "loginForm"
-    "logout" : "logout"
+    "logout" : 'logout'
     "time_entries" : "timeEntries"
 
   loginForm: ->
     app.layout.renderLoginForm()
 
+  logout: ->
+    app.session.destroy
+      success: ->
+        app.router.navigate('', {trigger: true})
+
   timeEntries: ->
-    console.log "time entries"
+    app.layout.renderTimeEntries()

@@ -1,0 +1,4 @@
+%td=@date
+%td=@distance
+%td=@time
+%td=@average_speed

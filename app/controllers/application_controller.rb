@@ -4,8 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper :all
   helper_method :current_user_session, :current_user
-
-  layout ->(c) {c.request.xhr? ? false : 'application'}
+  respond_to :json, :html
 
   private
   def current_user_session
@@ -19,10 +18,25 @@ class ApplicationController < ActionController::Base
   end
 
   def require_user
-    current_user.present?
+    unless current_user
+      render nothing: true, status: :unauthorized
+      false
+    end
   end
 
   def require_no_user
-    current_user.blank?
+    if current_user
+      render nothing: true, status: :unauthorized
+      false
+    end
+  end
+
+  def store_location
+    session[:return_to] = request.request_uri
+  end
+
+  def redirect_back_or_default(default)
+    redirect_to(session[:return_to] || default)
+    session[:return_to] = nil
   end
 end

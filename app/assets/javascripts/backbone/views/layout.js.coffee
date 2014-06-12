@@ -6,13 +6,8 @@ class Jogtrack.Views.Layout extends Marionette.Layout
   regions:
     content: '.content'
 
-  events:
-    'click .logout': 'logout'
-
   renderLoginForm: ->
     @content.show(new Jogtrack.Views.LoginForm(model: Jogtrack.App.session))
 
-  logout: (e) ->
-    e.preventDefault()
-    app.session.logout()
-    app.router.navigate('/')
+  renderTimeEntries: ->
+    @content.show(new Jogtrack.Views.TimeEntries.List())

@@ -1,5 +1,7 @@
 class TimeEntriesController < ApplicationController
-  respond_to :json
+  respond_to :json, :html
+
+  before_action :require_user, only: :index
 
   def index
     @time_entries = TimeEntry.all

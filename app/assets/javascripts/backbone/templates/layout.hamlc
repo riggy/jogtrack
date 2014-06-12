@@ -2,5 +2,7 @@
 
 %nav
   %a.logout{href: '#logout'} Logout
+  \|
+  %a{href: '#time_entries'} Time Entries
 
 .content
