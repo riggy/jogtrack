@@ -20,5 +20,6 @@
 //= require backbone.marionette
 //= require backbone.modelbinder
 //= require hamlcoffee
+//= require backbone/helpers
 //= require backbone/jogtrack
 //= require_tree .

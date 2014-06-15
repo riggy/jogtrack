@@ -9,7 +9,10 @@ class Jogtrack.Views.LoginForm extends Marionette.ItemView
 
   loginUser: (event) ->
     event.preventDefault()
-    @model.save()
+    @model.save null,
+      success: =>
+        Helpers.redirectLoggedIn()
 
   onRender: ->
     @modelBinder.bind(@model, @$el)
+    Helpers.redirectLoggedIn()

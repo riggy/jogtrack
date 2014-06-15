@@ -1,0 +1,15 @@
+%form
+  %h1 Registration
+  %label
+    Email
+    %input{name: 'email', type: 'text'}
+  %br
+  %label
+    Password
+    %input{name: 'password', type: 'password'}
+  %br
+  %label
+    Password Confirmation
+    %input{name: 'password_confirmation', type: 'password'}
+  %br
+  %input{type: 'submit', value: 'Register'}

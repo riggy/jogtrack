@@ -3,6 +3,7 @@
 #= require_tree ./models
 #= require_tree ./views
 #= require_tree ./routers
+#= require ./helpers
 
 @Jogtrack =
   App: new Backbone.Marionette.Application()
@@ -14,8 +15,10 @@
 
 Jogtrack.App.addInitializer( ->
   @router = new Jogtrack.Router()
-  @session = new Jogtrack.Models.Session()
-  @session.fetch(wait: true)
+  if options?
+    @session = new Jogtrack.Models.Session(user: options.user, {parse: true})
+  else
+    @session = new Jogtrack.Models.Session()
   @layout = new Jogtrack.Views.Layout()
   @layout.render()
 

@@ -1,2 +1,3 @@
-json.email @user_session.try(:user).try(:email)
-json.id @user_session.try(:user).try(:id)
+json.user do
+  json.partial! 'users/user', user: @user_session.user
+end

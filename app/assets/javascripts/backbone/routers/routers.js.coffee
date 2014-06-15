@@ -4,6 +4,7 @@ class Jogtrack.Router extends Backbone.Router
     "" : "loginForm"
     "logout" : 'logout'
     "time_entries" : "timeEntries"
+    "register" : "register"
 
   loginForm: ->
     app.layout.renderLoginForm()
@@ -15,3 +16,6 @@ class Jogtrack.Router extends Backbone.Router
 
   timeEntries: ->
     app.layout.renderTimeEntries()
+
+  register: ->
+    app.layout.renderRegistration()

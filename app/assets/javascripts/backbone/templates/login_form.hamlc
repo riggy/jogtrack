@@ -1,4 +1,5 @@
 %form
+  %h1 Login
   %label
     Email
     %input#user_session_email{name: 'email', type: 'text'}

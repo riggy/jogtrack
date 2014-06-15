@@ -3,8 +3,21 @@ class Jogtrack.Models.Session extends Backbone.Model
   url: "/user_session"
 
   initialize: ->
-    @on 'change:id', () -> @set('password',null)
-    @on 'destroy', () -> @set(id: null, email: null)
+    @on 'sync', () -> @set('password',null)
+    @on 'destroy', () ->
+      @unset('user')
+      @unset('id')
+
+  parse: (data) ->
+    if data.user
+      data.user = new Jogtrack.Models.User(data.user)
+    data
+
+  isNew: ->
+    !@get('user')?
+
+  user: ->
+    @get('user')
 
   loggedIn: ->
-    @get('id')? && @get('email')?
+    @get('user')?

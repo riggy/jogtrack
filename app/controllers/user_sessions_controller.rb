@@ -4,13 +4,6 @@ class UserSessionsController < ApplicationController
   before_filter :require_no_user, only: :create
   before_filter :require_user, only: :destroy
 
-  def show
-    @user_session = UserSession.find
-    respond_with @user_session do |format|
-      format.json {render 'create'}
-    end
-  end
-
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
