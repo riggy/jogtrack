@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20140609220416) do
   create_table "time_entries", force: true do |t|
     t.integer  "user_id"
     t.date     "date"
-    t.integer  "distance"
+    t.float    "distance"
     t.integer  "time"
     t.float    "average_speed"
     t.datetime "created_at"
