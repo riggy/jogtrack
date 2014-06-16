@@ -1,5 +1,3 @@
-%a.new-time-entry{href: '#time_entries/new'} New time entry
-
 %table.list
   %thead
     %th Date

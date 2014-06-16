@@ -1,0 +1,10 @@
+%form
+  %label
+    From
+    %input{type: 'text', name: 'date_from'}
+
+  %label
+    To
+    %input{type: 'text', name: 'date_to'}
+
+  %input{type: 'submit', value: 'Filter'}

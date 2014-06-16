@@ -3,7 +3,11 @@ class TimeEntriesController < ApplicationController
   before_action :require_user, only: :index
 
   def index
-    @time_entries = current_user.time_entries
+    @time_entries = current_user.
+        time_entries.
+        date_from(params[:date_from]).
+        date_to(params[:date_to])
+
     respond_with @time_entries
   end
 
