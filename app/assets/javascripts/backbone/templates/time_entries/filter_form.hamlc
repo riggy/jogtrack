@@ -7,4 +7,4 @@
     To
     %input{type: 'text', name: 'date_to'}
 
-  %input{type: 'submit', value: 'Filter'}
+  %button{type: 'button',  name: 'clear'} Clear
