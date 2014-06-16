@@ -1,0 +1,18 @@
+%form
+  %label
+    Date
+    %input{type: 'text', name: 'date'}
+  %br
+  %label
+    Distance
+    %input{type: 'text', name: 'distance'}
+  %br
+  %label
+    Time
+    %input{type: 'text', name: 'time' }
+  %br
+  %label
+    Average speed
+    %input{type: 'text', name: 'average_speed'}
+  %br
+  %input{type: 'submit', value: 'Save'}

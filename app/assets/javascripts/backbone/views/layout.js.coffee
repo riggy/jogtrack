@@ -19,10 +19,21 @@ class Jogtrack.Views.Layout extends Marionette.Layout
     @content.show(new Jogtrack.Views.Registration())
 
   renderLoginForm: ->
-    @content.show(new Jogtrack.Views.LoginForm(model: Jogtrack.App.session))
+    @content.show(new Jogtrack.Views.LoginForm(model: app.session))
 
   renderTimeEntries: ->
     @content.show(new Jogtrack.Views.TimeEntries.List())
+
+  renderNewTimeEntry: ->
+    @content.show(new Jogtrack.Views.TimeEntries.New())
+
+  renderShowTimeEntry: (modelId) ->
+    model = new Jogtrack.Models.TimeEntry(id: modelId)
+    @content.show(new Jogtrack.Views.TimeEntries.Show(model: model))
+
+  renderEditTimeEntry: (modelId) ->
+    model = new Jogtrack.Models.TimeEntry(id: modelId)
+    @content.show(new Jogtrack.Views.TimeEntries.Edit(model: model))
 
   onRender: ->
     @updateSession()

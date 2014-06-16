@@ -1,0 +1,14 @@
+%h1 Showing time entry
+
+%p
+  %b Date:
+  %span{name: 'date'}= @date
+%p
+  %b Distance:
+  %span{name: 'distance'}= @distance
+%p
+  %b Time:
+  %span{name: 'time'}= @time
+%p
+  %b Average speed
+  %span{name: 'average_speed'}= @average_speed

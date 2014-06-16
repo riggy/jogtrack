@@ -1,5 +1,5 @@
 class Jogtrack.Models.Session extends Backbone.Model
-  paramsRoot: "user_session"
+  paramRoot: "user_session"
   url: "/user_session"
 
   initialize: ->

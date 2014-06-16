@@ -25,9 +25,6 @@ Jogtrack.App.addInitializer( ->
 )
 
 Jogtrack.App.on 'initialize:after', ->
-  $('a').click (e) ->
-    e.preventDefault()
-    Jogtrack.App.router.navigate($(@).attr('href'), {trigger: true})
   Backbone.history.start()
 
 window.app = Jogtrack.App

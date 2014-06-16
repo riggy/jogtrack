@@ -1,4 +1,5 @@
 class Jogtrack.Models.TimeEntry extends Backbone.Model
+  paramRoot: 'time_entry'
   url: () ->
     if @isNew()
       '/time_entries'

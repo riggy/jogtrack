@@ -1,0 +1,1 @@
+json.partial! 'time_entry', time_entry: @time_entry

@@ -1,8 +1,10 @@
+%a.new-time-entry{href: '#time_entries/new'} New time entry
+
 %table.list
   %thead
     %th Date
     %th Distance
     %th Time
-    %th Average time
+    %th
   %tbody
 

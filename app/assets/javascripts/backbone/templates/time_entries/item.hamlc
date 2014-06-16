@@ -1,4 +1,9 @@
 %td=@date
 %td=@distance
 %td=@time
-%td=@average_speed
+%td
+  %a{href: "#time_entries/#{@id}"} Show
+  \|
+  %a{href: "#time_entries/#{@id}/edit"} Edit
+  \|
+  %a.destroy{href: "#"} Destroy
