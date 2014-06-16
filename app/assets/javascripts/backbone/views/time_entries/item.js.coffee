@@ -12,5 +12,5 @@ class Jogtrack.Views.TimeEntries.Item extends Marionette.ItemView
 
   serializeData: ->
     data = super
-    data.timeFormatted = @model.timeFormatted()
+    data.time = @model.time()
     data
