@@ -9,3 +9,8 @@ class Jogtrack.Views.TimeEntries.Item extends Marionette.ItemView
     e.preventDefault()
     if confirm("Are you sure you want to delete this entry?")
       @model.destroy()
+
+  serializeData: ->
+    data = super
+    data.timeFormatted = @model.timeFormatted()
+    data

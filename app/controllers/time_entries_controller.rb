@@ -35,6 +35,10 @@ class TimeEntriesController < ApplicationController
     render json: {status: :ok}
   end
 
+  def report
+    @time_entries
+  end
+
   private
   def permitted_params
     params[:time_entry].permit(:date, :distance, :time, :average_speed)

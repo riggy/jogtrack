@@ -12,7 +12,7 @@ class Jogtrack.Views.Registration extends Marionette.ItemView
     event.preventDefault()
     @model.save null,
       success: ->
-        app.router.navigate('', trigger: true)
+        app.router.navigate('', {trigger: true, replace: true})
       error: (model, response, options) ->
         console.log response
 

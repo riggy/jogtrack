@@ -9,7 +9,11 @@
   %br
   %label
     Time
-    %input{type: 'text', name: 'time' }
+    %input{type: 'text', name: 'time_hours', placeholder: 'hours'}
+    :
+    %input{type: 'text', name: 'time_minutes', placeholder: 'minutes'}
+    :
+    %input{type: 'text', name: 'time_seconds', placeholder: 'seconds'}
   %br
   %label
     Average speed

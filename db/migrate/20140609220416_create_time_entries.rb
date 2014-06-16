@@ -3,8 +3,8 @@ class CreateTimeEntries < ActiveRecord::Migration
     create_table :time_entries do |t|
       t.belongs_to :user
       t.date :date
-      t.float :distance
-      t.time :time
+      t.integer :distance
+      t.integer :time
       t.float :average_speed
 
       t.timestamps

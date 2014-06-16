@@ -15,7 +15,7 @@ class Jogtrack.Router extends Backbone.Router
   logout: ->
     app.session.destroy
       success: ->
-        app.router.navigate('', {trigger: true})
+        app.router.navigate('', {trigger: true, replace: true})
 
   register: ->
     app.layout.renderRegistration()

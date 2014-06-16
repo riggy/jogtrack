@@ -1,6 +1,6 @@
 %td=@date
 %td=@distance
-%td=@time
+%td=@timeFormatted
 %td
   %a{href: "#time_entries/#{@id}"} Show
   \|
