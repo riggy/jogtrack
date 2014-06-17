@@ -36,8 +36,3 @@ group :development do
   gem 'guard-minitest'
   gem 'guard-bundler'
 end
-
-group :development, :test do
-  gem 'factory_girl_rails'
-  gem 'faker'
-end
