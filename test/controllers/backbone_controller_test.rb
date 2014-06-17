@@ -1,7 +1,8 @@
 require "test_helper"
 
 describe BackboneController do
-  it "must be a real test" do
-    flunk "Need real tests"
+  it 'should load app' do
+    get :home, format: :html
+    assert_response :success
   end
 end

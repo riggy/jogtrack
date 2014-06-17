@@ -1,0 +1,7 @@
+one:
+  id: 1
+  user: user
+  date: <%= Date.today %>
+  distance: 20.5
+  time: 20000
+  average_speed: 30

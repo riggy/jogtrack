@@ -1,6 +1,6 @@
 class TimeEntriesController < ApplicationController
   respond_to :json
-  before_action :require_user, only: :index
+  before_action :require_user
 
   def index
     @time_entries = current_user.
