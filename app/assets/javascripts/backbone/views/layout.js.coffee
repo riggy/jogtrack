@@ -35,5 +35,8 @@ class Jogtrack.Views.Layout extends Marionette.Layout
     model = new Jogtrack.Models.TimeEntry(id: modelId)
     @content.show(new Jogtrack.Views.TimeEntries.Edit(model: model))
 
+  renderTimeEntriesReport: ->
+    @content.show(new Jogtrack.Views.TimeEntries.ReportList())
+
   onRender: ->
     @updateSession()

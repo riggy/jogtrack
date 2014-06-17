@@ -36,7 +36,8 @@ class TimeEntriesController < ApplicationController
   end
 
   def report
-    @time_entries
+    @report = TimeEntry.weekly_report(current_user.id)
+    respond_with @report
   end
 
   private

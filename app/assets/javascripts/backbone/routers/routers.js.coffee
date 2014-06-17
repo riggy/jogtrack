@@ -5,6 +5,7 @@ class Jogtrack.Router extends Backbone.Router
     "logout" : 'logout'
     "register" : "register"
     "time_entries" : "timeEntries"
+    "time_entries/report" : "timeEntriesReport"
     "time_entries/new" : "newTimeEntry"
     "time_entries/:id" : "showTimeEntry"
     "time_entries/:id/edit" : "editTimeEntry"
@@ -31,3 +32,6 @@ class Jogtrack.Router extends Backbone.Router
 
   editTimeEntry: (id) ->
     app.layout.renderEditTimeEntry(id)
+
+  timeEntriesReport: ->
+    app.layout.renderTimeEntriesReport()

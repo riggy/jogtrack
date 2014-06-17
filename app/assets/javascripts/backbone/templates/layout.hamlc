@@ -2,5 +2,9 @@
 
 %nav
   %a.logout{href: '#logout'} Logout
+  \|
+  %a{href: '#time_entries'} Entries list
+  \|
+  %a{href: '#time_entries/report'} Weekly report
 
 .content

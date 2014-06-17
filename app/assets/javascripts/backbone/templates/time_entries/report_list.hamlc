@@ -1,0 +1,7 @@
+%table.list
+  %thead
+    %th Week
+    %th Average distance
+    %th Average speed
+  %tbody
+

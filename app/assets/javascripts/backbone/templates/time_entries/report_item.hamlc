@@ -1,0 +1,3 @@
+%td != "#{@week.start} &ndash; #{@week.end}"
+%td=@average_distance
+%td=@average_speed
