@@ -26,10 +26,11 @@ gem 'thin'
 gem 'quiet_assets'
 gem 'bootstrap-sass', '~> 3.1.1'
 
-
 group :test do
   gem 'minitest-rails'
   gem 'pretty_test'
+  gem 'factory_girl_rails'
+  gem 'faker'
 end
 
 group :development do

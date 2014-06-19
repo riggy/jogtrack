@@ -7,7 +7,17 @@ describe TimeEntriesController do
 
   describe 'when user logged in' do
     setup do
-      UserSession.create users(:user)
+      @user = FactoryGirl.build(:user)
+      @user.save!
+      UserSession.create @user
+
+      @time_entry = FactoryGirl.build(:time_entry, user: @user)
+      @time_entry.save!
+
+      2.times do
+        time_entry = FactoryGirl.build(:time_entry, user: @user, date: Date.today + 1.week)
+        time_entry.save!
+      end
     end
 
     it 'should return set of time entries' do
@@ -17,7 +27,7 @@ describe TimeEntriesController do
     end
 
     it 'should return time entry' do
-      get :show, id: 1, format: :json
+      get :show, id: @time_entry.id, format: :json
       assert_response :success
       assert_not_nil assigns(:time_entry)
     end
@@ -41,16 +51,16 @@ describe TimeEntriesController do
     end
 
     it 'should update a time entry' do
-      put :update, id: 1, format: :json, time_entry: {
+      put :update, id: @time_entry.id, format: :json, time_entry: {
           distance: 6
       }
       assert_response :success
-      assert_equal 6, TimeEntry.find(1).distance
+      assert_equal 6, @time_entry.reload.distance
     end
 
     it 'should destroy time entry' do
       assert_difference 'TimeEntry.count', -1 do
-        delete :destroy, id: 1, format: :json
+        delete :destroy, id: @time_entry.id, format: :json
       end
       assert_response :success
     end
