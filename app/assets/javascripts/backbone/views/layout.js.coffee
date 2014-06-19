@@ -35,7 +35,7 @@ class Jogtrack.Views.Layout extends Marionette.Layout
 
   renderNewTimeEntry: ->
     @setActiveButton('.new-time-entry')
-    @content.show(new Jogtrack.Views.TimeEntries.New())
+    @content.show(new Jogtrack.Views.TimeEntries.Edit())
 
   renderShowTimeEntry: (modelId) ->
     @setActiveButton('.time-entries')

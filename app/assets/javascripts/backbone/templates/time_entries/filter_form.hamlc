@@ -1,10 +1,16 @@
 %form.form-inline{role: 'form'}
   .form-group
     %label.control-label{for: 'date_from'} From
-    %input.form-control{type: 'text', name: 'date_from'}
+    .input-group.date.datepicker
+      %input.form-control#date_from{type: 'text', name: 'date_from'}
+      %span.input-group-addon
+        %span.glyphicon.glyphicon-calendar
 
   .form-group
     %label.control-label{for: 'date_to'} To
-    %input.form-control{type: 'text', name: 'date_to'}
+    .input-group.date.datepicker
+      %input.form-control#date_to{type: 'text', name: 'date_to'}
+      %span.input-group-addon
+        %span.glyphicon.glyphicon-calendar
 
   %button.btn.btn-default{type: 'button',  name: 'clear'} Clear

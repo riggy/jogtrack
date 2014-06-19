@@ -6,4 +6,17 @@ class Jogtrack.Views.TimeEntries.Show extends Marionette.ItemView
     @modelBinder = new Backbone.ModelBinder()
 
   onRender: ->
-    @modelBinder.bind(@model, @$el)
+    bindings = Backbone.ModelBinder.createDefaultBindings(this.el, 'name');
+    bindings['time'].converter = (direction, value) =>
+      if direction == 'ModelToView'
+        @model.time()
+
+    bindings['distance'].converter = (direction, value) ->
+      if direction == 'ModelToView'
+        "#{value} km"
+
+    bindings['average_speed'].converter = (direction, value) ->
+      if direction == 'ModelToView'
+        "#{value} min/km"
+
+    @modelBinder.bind(@model, @$el, bindings)

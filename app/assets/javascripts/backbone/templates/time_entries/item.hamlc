@@ -1,5 +1,5 @@
 %td=@date
-%td=@distance
+%td="#{@distance.toFixed(2)} km"
 %td=@time
 %td.text-right
   %a.btn.btn-xs{href: "#time_entries/#{@id}", title: "Show details"}

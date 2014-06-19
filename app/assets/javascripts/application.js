@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require underscore
+//= require moment
+//= require bootstrap-datetimepicker
 //= require bootstrap
 //= require backbone
 //= require backbone_rails_sync

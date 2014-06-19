@@ -1,2 +1,42 @@
-%h2 Edit time entry
-!= JST['backbone/templates/time_entries/form']()
+%h2 #{@formType} time entry
+%form.form-horizontal{role: 'form'}
+  .form-group
+    %label.control-label.col-sm-2{for: 'date'} Date
+    .col-sm-9
+      .input-group.date.datepicker
+        %input.form-control#date{type: 'text', name: 'date'}
+        %span.input-group-addon
+          %span.glyphicon.glyphicon-calendar
+  .form-group
+    %label.control-label.col-sm-2{for: 'distance'} Distance
+    .col-sm-9
+      .input-group
+        %input.form-control#distance{type: 'number', name: 'distance'}
+        .input-group-addon km
+  .form-group
+    %label.control-label.col-sm-2 Time
+    .col-sm-9
+      .form-inline
+        .form-group.col-sm-4
+          .input-group
+            %input.form-control{type: 'number', name: 'time_hours', placeholder: 'hours'}
+            .input-group-addon h
+        .form-group.col-sm-4
+          .input-group
+            %input.form-control{type: 'number', name: 'time_minutes', placeholder: 'minutes', data: {limit: 60}}
+            .input-group-addon m
+        .form-group.col-sm-4
+          .input-group
+            %input.form-control{type: 'number', name: 'time_seconds', placeholder: 'seconds', data: {limit: 60}}
+            .input-group-addon s
+
+  .form-group
+    %label.control-label.col-sm-2{for: 'average_speed'} Average speed
+    .col-sm-9
+      .input-group
+        %input.form-control#distance{type: 'number', name: 'average_speed'}
+        .input-group-addon min/km
+
+  .form-group
+    .col-sm-9.col-sm-offset-2
+      %button.btn.btn-default{type: 'submit'} Save

@@ -19,3 +19,10 @@ class Jogtrack.Views.TimeEntries.FilterForm extends Marionette.ItemView
 
   onRender: ->
     @modelBinder.bind(@filterModel, @$el)
+
+    @$('.datepicker').datetimepicker
+      pickTime: false
+      format: 'YYYY-MM-DD'
+
+    @$('.datepicker').on 'dp.change', () ->
+      $('input', $(@)).trigger('change')

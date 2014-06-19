@@ -1,14 +1,19 @@
 %h1 Showing time entry
 
-%p
-  %b Date:
-  %span{name: 'date'}= @date
-%p
-  %b Distance:
-  %span{name: 'distance'}= @distance
-%p
-  %b Time:
-  %span{name: 'time'}= @time
-%p
-  %b Average speed
-  %span{name: 'average_speed'}= @average_speed
+%form.form-horizontal
+  .form-group
+    %label.control-label.col-sm-2 Date
+    .col-sm-9
+      .form-control-static{name: 'date'}
+  .form-group
+    %label.control-label.col-sm-2 Distance
+    .col-sm-9
+      .form-control-static{name: 'distance'}
+  .form-group
+    %label.control-label.col-sm-2 Time
+    .col-sm-9
+      .form-control-static{name: 'time'}
+  .form-group
+    %label.control-label.col-sm-2 Average speed
+    .col-sm-9
+      .form-control-static{name: 'average_speed'}

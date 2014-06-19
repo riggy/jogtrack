@@ -3,10 +3,26 @@ class Jogtrack.Views.TimeEntries.Edit extends Marionette.ItemView
 
   events:
     'submit form': 'save'
+    'change input[data-limit]': 'changeTime'
 
   initialize: (options) ->
-    @model.fetch()
+    if @model
+      @model.fetch()
+      @formType = 'Edit'
+    else
+      @model = new Jogtrack.Models.TimeEntry()
+      @formType = 'New'
     @modelBinder = new Backbone.ModelBinder()
+
+  serializeData: ->
+    data = super
+    data.formType = @formType
+    data
+
+  changeTime: (e) ->
+    limit = $(e.currentTarget).data('limit')
+    if $(e.currentTarget).val() > limit
+      $(e.currentTarget).val(limit)
 
   save: (e) ->
     e.preventDefault()
@@ -18,3 +34,10 @@ class Jogtrack.Views.TimeEntries.Edit extends Marionette.ItemView
 
   onRender: ->
     @modelBinder.bind(@model, @$el)
+
+    @$('.datepicker').datetimepicker
+      pickTime: false
+      format: 'YYYY-MM-DD'
+
+    @$('.datepicker').on 'dp.change', () ->
+      $('input', $(@)).trigger('change')
