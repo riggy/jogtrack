@@ -2,6 +2,7 @@ class Jogtrack.Router extends Backbone.Router
 
   routes:
     "" : "loginForm"
+    "login" : "loginForm"
     "logout" : 'logout'
     "register" : "register"
     "time_entries" : "timeEntries"
@@ -16,7 +17,7 @@ class Jogtrack.Router extends Backbone.Router
   logout: ->
     app.session.destroy
       success: ->
-        app.router.navigate('', {trigger: true, replace: true})
+        app.router.navigate('login', {trigger: true, replace: true})
 
   register: ->
     app.layout.renderRegistration()

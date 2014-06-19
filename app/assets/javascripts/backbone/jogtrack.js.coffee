@@ -32,7 +32,7 @@ window.app = Jogtrack.App
 $ ->
   $(document).ajaxError (e, xhr, settings, thrownError) ->
     if xhr.status == 401
-      app.router.navigate('', {trigger: true})
+      app.router.navigate('login', {trigger: true, replace: true})
 
 
   Jogtrack.App.start()
