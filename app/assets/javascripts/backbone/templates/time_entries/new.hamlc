@@ -1,2 +1,2 @@
-%h1 New time entry
+%h2 New time entry
 != JST['backbone/templates/time_entries/form']()

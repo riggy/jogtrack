@@ -1,22 +1,30 @@
-%form
-  %label
-    Date
-    %input{type: 'text', name: 'date'}
-  %br
-  %label
-    Distance
-    %input{type: 'text', name: 'distance'}
-  %br
-  %label
-    Time
-    %input{type: 'text', name: 'time_hours', placeholder: 'hours'}
-    :
-    %input{type: 'text', name: 'time_minutes', placeholder: 'minutes'}
-    :
-    %input{type: 'text', name: 'time_seconds', placeholder: 'seconds'}
-  %br
-  %label
-    Average speed
-    %input{type: 'text', name: 'average_speed'}
-  %br
-  %input{type: 'submit', value: 'Save'}
+%form.form-horizontal{role: 'form'}
+  .form-group
+    %label.control-label.col-sm-2{for: 'date'} Date
+    .col-sm-9
+      %input.form-control#date{type: 'text', name: 'date'}
+  .form-group
+    %label.control-label.col-sm-2{for: 'distance'} Distance
+    .col-sm-9
+      %input.form-control#distance{type: 'text', name: 'distance'}
+  .form-group
+    %label.control-label.col-sm-2 Time
+    .col-sm-9
+      .form-inline
+        .form-group.col-sm-4
+          %input.form-control{type: 'text', name: 'time_hours', placeholder: 'hours'}
+          &nbsp;\:
+        .form-group.col-sm-4
+          %input.form-control{type: 'text', name: 'time_minutes', placeholder: 'minutes'}
+          &nbsp;\:
+        .form-group.col-sm-4
+          %input.form-control{type: 'text', name: 'time_seconds', placeholder: 'seconds'}
+
+  .form-group
+    %label.control-label.col-sm-2{for: 'average_speed'} Average speed
+    .col-sm-9
+      %input.form-control#distance{type: 'text', name: 'average_speed'}
+
+  .form-group
+    .col-sm-9.col-sm-offset-2
+      %button.btn.btn-default{type: 'submit'} Save

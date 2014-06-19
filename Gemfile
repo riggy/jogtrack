@@ -24,6 +24,7 @@ gem 'haml_assets'
 gem 'will_paginate'
 gem 'thin'
 gem 'quiet_assets'
+gem 'bootstrap-sass', '~> 3.1.1'
 
 
 group :test do

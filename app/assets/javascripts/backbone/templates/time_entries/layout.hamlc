@@ -1,4 +1,4 @@
-%a.new-time-entry{href: '#time_entries/new'} New time entry
+%h2 Time Entries
 
 .filter-form
 .list

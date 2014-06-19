@@ -1,11 +1,15 @@
-%form
-  %h1 Login
-  %label
-    Email
-    %input#user_session_email{name: 'email', type: 'text'}
-  %br
-  %label
-    Password
-    %input#user_session_password{name: 'password', type: 'password'}
-  %br
-  %input{type: 'submit', value: 'Login'}
+%form.form-horizontal{role: 'form'}
+  .row
+    .col-sm-7.col-sm-offset-3
+      %h2 Login
+  .form-group
+    %label.control-label.col-sm-3{for: 'email'} Email
+    .col-sm-7
+      %input#email.form-control{name: 'email', type: 'email'}
+  .form-group
+    %label.control-label.col-sm-3{for: 'password'} Password
+    .col-sm-7
+      %input#password.form-control{name: 'password', type: 'password'}
+  .form-group
+    .col-sm-7.col-sm-offset-3
+      %button.btn.btn-default{type: 'submit'} Login

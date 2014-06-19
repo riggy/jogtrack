@@ -1,10 +1,27 @@
-%h1 Layout
+%nav.navbar.navbar-default{role: 'navigation'}
+  .navbar-header
+    %button.navbar-toggle{data: {toggle: 'collapse', target: '#collapse-navbar'}}
+      %span.sr-only Toggle navigation
+      %span.icon-bar
+      %span.icon-bar
+      %span.icon-bar
+    .navbar-brand Jogtrack
 
-%nav
-  %a.logout{href: '#logout'} Logout
-  \|
-  %a{href: '#time_entries'} Entries list
-  \|
-  %a{href: '#time_entries/report'} Weekly report
+  .collapse.navbar-collapse#collapse-navbar
+    %ul.nav.navbar-nav.logged-out
+      %li.login
+        %a{href: '#login'} Login
+      %li.register
+        %a{href: '#register'} Register
+    %ul.nav.navbar-nav.logged-in
+      %li.time-entries
+        %a{href: '#time_entries'} Time Entries
+      %li.weekly-report
+        %a{href: '#time_entries/report'} Weekly report
+      %li.new-time-entry
+        %a{href: '#time_entries/new'} New time entry
+    %ul.nav.navbar-nav.navbar-right.logged-in
+      %li
+        %a{href: '#logout'} Logout
 
 .content

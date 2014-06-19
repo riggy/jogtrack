@@ -1,9 +1,13 @@
 %td=@date
 %td=@distance
 %td=@time
-%td
-  %a{href: "#time_entries/#{@id}"} Show
-  \|
-  %a{href: "#time_entries/#{@id}/edit"} Edit
-  \|
-  %a.destroy{href: "#"} Destroy
+%td.text-right
+  %a.btn.btn-xs{href: "#time_entries/#{@id}", title: "Show details"}
+    %span.glyphicon.glyphicon-search
+    Show
+  %a.btn.btn-xs{href: "#time_entries/#{@id}/edit", title: "Edit"}
+    %span.glyphicon.glyphicon-pencil
+    Edit
+  %a.btn.btn-xs.destroy{href: "#", title: "Destroy"}
+    %span.glyphicon.glyphicon-remove
+    Destroy

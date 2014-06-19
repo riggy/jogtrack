@@ -1,8 +1,9 @@
-%table.list
-  %thead
-    %th Date
-    %th Distance
-    %th Time
-    %th
-  %tbody
+.table-responsive
+  %table.table.table-striped.table-hover
+    %thead
+      %th Date
+      %th Distance
+      %th Time
+      %th
+    %tbody
 
