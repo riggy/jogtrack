@@ -11,7 +11,7 @@
     %label.control-label.col-sm-2{for: 'distance'} Distance
     .col-sm-9
       .input-group
-        %input.form-control#distance{type: 'number', name: 'distance'}
+        %input.form-control#distance{type: 'number', name: 'distance', min: '0', step: 'any'}
         .input-group-addon km
   .form-group
     %label.control-label.col-sm-2 Time
@@ -19,22 +19,22 @@
       .form-inline
         .form-group.col-sm-4
           .input-group
-            %input.form-control{type: 'number', name: 'time_hours', placeholder: 'hours'}
+            %input.form-control{type: 'number', name: 'time_hours', placeholder: 'hours', min: '0', step: 'any'}
             .input-group-addon h
         .form-group.col-sm-4
           .input-group
-            %input.form-control{type: 'number', name: 'time_minutes', placeholder: 'minutes', data: {limit: 60}}
+            %input.form-control{type: 'number', name: 'time_minutes', placeholder: 'minutes', data: {limit: 60}, min: '0', step: 'any'}
             .input-group-addon m
         .form-group.col-sm-4
           .input-group
-            %input.form-control{type: 'number', name: 'time_seconds', placeholder: 'seconds', data: {limit: 60}}
+            %input.form-control{type: 'number', name: 'time_seconds', placeholder: 'seconds', data: {limit: 60}, min: '0', step: 'any'}
             .input-group-addon s
 
   .form-group
     %label.control-label.col-sm-2{for: 'average_speed'} Average speed
     .col-sm-9
       .input-group
-        %input.form-control#distance{type: 'number', name: 'average_speed'}
+        %input.form-control#distance{type: 'number', name: 'average_speed', min: '0', step: 'any'}
         .input-group-addon min/km
 
   .form-group

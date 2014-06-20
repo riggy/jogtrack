@@ -24,4 +24,5 @@
       %li
         %a{href: '#logout'} Logout
 
+.alerts
 .content

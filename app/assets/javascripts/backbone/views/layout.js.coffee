@@ -5,9 +5,18 @@ class Jogtrack.Views.Layout extends Marionette.Layout
 
   regions:
     content: '.content'
+    alerts: '.alerts'
 
   initialize: ->
     @listenTo app.session, 'change', @updateSession
+    @listenTo app.vent, 'alert', @handleAlert
+    @alertsCollection = new Jogtrack.Collections.Alerts()
+
+  handleAlert: (errors) ->
+    if errors?
+      _.each errors, (value, index) =>
+        @alertsCollection.add({text: value, type: index})
+
 
   updateSession: ->
     if app.session.loggedIn()
@@ -53,3 +62,4 @@ class Jogtrack.Views.Layout extends Marionette.Layout
 
   onRender: ->
     @updateSession()
+    @alerts.show(new Jogtrack.Views.AlertList(collection: @alertsCollection))

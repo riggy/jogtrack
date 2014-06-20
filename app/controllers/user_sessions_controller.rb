@@ -10,7 +10,7 @@ class UserSessionsController < ApplicationController
       flash[:notice] = "Login successful!"
       respond_with @user_session
     else
-      render json: {status: :error}, status: :forbidden
+      render json: {errors: @user_session.errors}, status: :forbidden
     end
   end
 

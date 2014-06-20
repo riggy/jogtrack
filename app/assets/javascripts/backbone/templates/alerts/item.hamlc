@@ -1,0 +1,4 @@
+%button.close{type: 'button', data: {dismiss: 'alert'}, 'aria-hidden' => 'true'} &times;
+- if @type != 'base'
+  %strong.type=@type.replace('_',' ')
+=@text

@@ -29,8 +29,9 @@ class Jogtrack.Views.TimeEntries.Edit extends Marionette.ItemView
     @model.save null,
       success: ->
         app.router.navigate('time_entries', trigger: true)
-      error: (model, response, options) ->
-        alert response.responseText
+      error: (model, response, options) =>
+        if response.responseJSON.errors
+          app.vent.trigger('alert', response.responseJSON.errors)
 
   onRender: ->
     @modelBinder.bind(@model, @$el)

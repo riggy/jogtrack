@@ -12,6 +12,9 @@ class Jogtrack.Views.LoginForm extends Marionette.ItemView
     @model.save null,
       success: =>
         Helpers.redirectLoggedIn()
+      error: (model, response, options) =>
+        if response.responseJSON.errors
+          app.vent.trigger('alert', response.responseJSON.errors)
 
   onRender: ->
     @modelBinder.bind(@model, @$el)

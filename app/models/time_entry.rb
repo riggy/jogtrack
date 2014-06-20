@@ -1,6 +1,11 @@
 class TimeEntry < ActiveRecord::Base
   belongs_to :user
 
+  validates :date, presence: true
+  validates :distance, presence: true
+  validates :time, presence: true
+  validates :average_speed, presence: true
+
   scope :date_from, ->(from_date) do
     where("date >= ?", from_date) unless from_date.blank?
   end
