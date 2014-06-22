@@ -31,12 +31,5 @@
             .input-group-addon s
 
   .form-group
-    %label.control-label.col-sm-2{for: 'average_speed'} Average speed
-    .col-sm-9
-      .input-group
-        %input.form-control#distance{type: 'number', name: 'average_speed', min: '0', step: 'any'}
-        .input-group-addon min/km
-
-  .form-group
     .col-sm-9.col-sm-offset-2
       %button.btn.btn-default{type: 'submit'} Save

@@ -15,8 +15,13 @@ class Jogtrack.Views.TimeEntries.Show extends Marionette.ItemView
       if direction == 'ModelToView'
         "#{value} km"
 
-    bindings['average_speed'].converter = (direction, value) ->
+    bindings['average_speed'].converter = (direction, value) =>
       if direction == 'ModelToView'
-        "#{value} min/km"
+        @model.averageSpeed()
 
     @modelBinder.bind(@model, @$el, bindings)
+
+  serializeData: ->
+    data = super
+    data.averageSpeed = @model.averageSpeed()
+    data

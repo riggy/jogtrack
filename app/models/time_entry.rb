@@ -4,7 +4,10 @@ class TimeEntry < ActiveRecord::Base
   validates :date, presence: true
   validates :distance, presence: true
   validates :time, presence: true
-  validates :average_speed, presence: true
+
+  before_save do
+    self.average_speed = (60 / (distance / (time / 3600.0))) * 3600
+  end
 
   scope :date_from, ->(from_date) do
     where("date >= ?", from_date) unless from_date.blank?
