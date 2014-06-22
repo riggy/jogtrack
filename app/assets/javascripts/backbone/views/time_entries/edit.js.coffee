@@ -10,7 +10,7 @@ class Jogtrack.Views.TimeEntries.Edit extends Marionette.ItemView
       @model.fetch()
       @formType = 'Edit'
     else
-      @model = new Jogtrack.Models.TimeEntry()
+      @model = new Jogtrack.Models.TimeEntry(date: moment().format('YYYY-MM-DD'))
       @formType = 'New'
     @modelBinder = new Backbone.ModelBinder()
 
