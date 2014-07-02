@@ -29,6 +29,7 @@ group :test do
   gem 'pretty_test'
   gem 'factory_girl_rails'
   gem 'faker'
+  gem 'codeclimate-test-reporter', require: nil
 end
 
 group :development do
