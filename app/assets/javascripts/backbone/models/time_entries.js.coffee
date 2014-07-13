@@ -1,5 +1,9 @@
 class Jogtrack.Models.TimeEntry extends Backbone.Model
   paramRoot: 'time_entry'
+
+  defaults:
+    date: moment().format('YYYY-MM-DD')
+
   url: () ->
     if @isNew()
       '/time_entries'
